@@ -9,7 +9,7 @@ import {TeamMetadataDTO} from '../dto/TeamMetadataDTO';
 import {GetTeams} from '../interfaces/get-teams';
 
 @Injectable()
-export class TeamService implements GetTeams {
+export class HttpTeamService implements GetTeams {
   private readonly url: string;
 
   constructor(private readonly http: HttpClient) {
