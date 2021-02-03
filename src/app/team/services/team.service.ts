@@ -6,16 +6,17 @@ import {TeamDTO} from '../dto/TeamDTO';
 import {TeamAttributesDTO} from '../dto/TeamAttributesDTO';
 import {map, pluck} from 'rxjs/operators';
 import {TeamMetadataDTO} from '../dto/TeamMetadataDTO';
+import {GetTeams} from '../interfaces/get-teams';
 
 @Injectable()
-export class TeamService {
+export class TeamService implements GetTeams {
   private readonly url: string;
 
   constructor(private readonly http: HttpClient) {
     this.url = `${environment.urlRoot}/task`;
   }
 
-  public getTeam(): Observable<TeamAttributesDTO[]> {
+  public getTeams(): Observable<TeamAttributesDTO[]> {
     const endpoint = `${this.url}/index.json`;
     return this.http.get<TeamDTO>(endpoint, {responseType: 'json'}).pipe(
       pluck('data'),

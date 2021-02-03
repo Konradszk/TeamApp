@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {TeamService} from '../../services/team.service';
+import {Component, Inject} from '@angular/core';
 import {Observable} from 'rxjs';
 import {TeamAttributesDTO} from '../../dto/TeamAttributesDTO';
 import {map} from 'rxjs/operators';
 import {Team} from '../../domain/Team';
 import {TeamMemberDTO} from '../../dto/TeamMemberDTO';
 import {TeamMember} from '../../domain/TTeamMember';
+import {GET_TEAMS, GetTeams} from '../../interfaces/get-teams';
 
 @Component({
   selector: 'cob-team-container',
@@ -16,7 +16,7 @@ import {TeamMember} from '../../domain/TTeamMember';
 })
 export class TeamContainer {
 
-  public teams$: Observable<Team[]> = this.teamService.getTeam().pipe(
+  public teams$: Observable<Team[]> = this.teamService.getTeams().pipe(
     map(teamsAttr => teamsAttr.map(this.teamMapper))
   );
 
@@ -37,7 +37,7 @@ export class TeamContainer {
     ])
 
   constructor(
-    private readonly teamService: TeamService
+    @Inject(GET_TEAMS) private readonly teamService: GetTeams
   ) {
   }
 }

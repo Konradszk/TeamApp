@@ -4,6 +4,7 @@ import {TeamUiComponent} from './components/team/team-ui/team-ui.component';
 import {TeamContainer} from './components/team/team.container';
 import {TeamService} from './services/team.service';
 import { TeamMemberUiComponent } from './components/team/team-ui/team-member-ui/team-member-ui.component';
+import {GET_TEAMS} from './interfaces/get-teams';
 
 
 @NgModule({
@@ -12,7 +13,10 @@ import { TeamMemberUiComponent } from './components/team/team-ui/team-member-ui/
     CommonModule
   ],
   exports: [TeamContainer],
-  providers: [TeamService]
+  providers: [{
+    provide: GET_TEAMS,
+    useClass: TeamService
+  }]
 })
 export class TeamModule {
 }
