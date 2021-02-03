@@ -1,0 +1,21 @@
+@import 'colors';
+@import 'mixin';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+a[href^="tel:"] {
+  @include secondaryInfo;
+  text-decoration: none;
+}
+
+a[href^="mailto:"] {
+  color: $blue;
+  text-decoration: none;
+}

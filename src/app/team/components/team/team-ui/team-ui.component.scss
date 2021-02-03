@@ -1,0 +1,37 @@
+@import 'src/styles/spacing';
+@import 'src/styles/mixin';
+
+
+$pic-size: 25vw;
+
+.container {
+  padding-top: $xl-margin;
+}
+
+.team {
+  @include column;
+  align-items: center;
+
+  .team-members {
+    display: flex;
+
+    .photo {
+      width: $pic-size;
+      object-fit: cover;
+      height: $pic-size;
+      object-position: 0 20%;
+    }
+
+    .position, .phone {
+      @include secondaryInfo;
+    }
+
+    .name {
+      @include headerInfo;
+    }
+  }
+}
+
+.info {
+  line-height: 1.4rem;
+}

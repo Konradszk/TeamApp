@@ -1,0 +1,15 @@
+<div class="person">
+  <ng-content select=".photo"></ng-content>
+
+  <div class="personal-info">
+    <div class="basic-info">
+      <ng-content select=".name"></ng-content>
+      <ng-content select=".position"></ng-content>
+    </div>
+
+    <div class="contact-info">
+      <ng-content select=".email"></ng-content>
+      <ng-content select=".phone"></ng-content>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'cob-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <main>
+      <cob-team-container></cob-team-container>
+    </main>`,
+  styles: []
 })
 export class AppComponent {
-  title = 'TeamApp';
+
 }

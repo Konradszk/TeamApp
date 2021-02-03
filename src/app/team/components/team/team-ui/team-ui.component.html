@@ -1,0 +1,16 @@
+<div class="container">
+  <section class="team" *ngFor="let team of teams; trackBy: trackByTeam">
+    <h1>{{team.name}}</h1>
+    <div class="team-members">
+      <cob-team-member-ui *ngFor="let member of team.members; trackBy: trackByMember">
+
+        <img class="photo info" [src]="member.picUrl" [alt]="member.name">
+        <span class="name info">{{member.name}}</span>
+        <span class="position info">{{member.position}}</span>
+        <a class="email info" [href]="'mailto:' + member.email">{{member.email}}</a>
+        <a class="phone info" [href]="'tel:' + member.phone">{{member.phone}}</a>
+
+      </cob-team-member-ui>
+    </div>
+  </section>
+</div>

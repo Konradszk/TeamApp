@@ -1,0 +1,19 @@
+@import 'src/styles/spacing';
+@import 'src/styles/mixin';
+
+.person {
+  margin: $sd-margin;
+
+  .personal-info {
+    @include column;
+    padding: $sd-padding;
+
+    .basic-info, .contact-info {
+      @include column;
+    }
+
+    .basic-info {
+      margin-bottom: $sd-margin;
+    }
+  }
+}
