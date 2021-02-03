@@ -1,4 +1,4 @@
-export interface BlockData {
+export interface BlockDataDTO {
   title: string;
   description: string;
   link: string;
